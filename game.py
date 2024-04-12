@@ -78,7 +78,7 @@ class Warrior(Person):
 def main():
     # Шаг 1. Создаём список вещей
     things = []
-    for i in range(10):
+    for i in range(50):
         things.append(Thing())
     things.sort(key=lambda x: x.defence)
     print(things)
