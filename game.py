@@ -92,27 +92,28 @@ def main():
         person.set_things(things)
 
     # Шаг 4. Отправляем персонажей на арену
-    while len(persons) > 1
+    while len(persons) > 1:
         attacking = choice(persons)
         persons.pop(attacking)
         defending = choice(persons)
         persons.pop(defending)
-        #attacking_hp = attacking.hp
-        #defending_hp = defending_hp
-        while attacking.hp > 0 or defending.hp > 0:
-            attacking.attac(defending)
-            print(f'{attacking.name} наносит удар по {defending.name} на {кол-во урона} урона')
+        attacking_hp = attacking.final_health_points
+        defending_hp = defending.final_health_points
+        while attacking.final_health_points > 0 or defending.final_health_points> 0:
+            defending.attack_damage(attacking)
+            print(f'{attacking.name} наносит удар по {defending.name} на {defending.final_health_points} урона')
             new_attacing = defending
             defending = attacking
-            attacking  = new_attacing
-        if attacking.hp > 0
-            attacking.hp = attacking.def_hp
+            attacking = new_attacing
+        if attacking.final_health_points > 0:
+            attacking.final_health_points = attacking_hp
             print(f'{attacking.name} победил {defending.name}')
             persons.append(attacking)
         else:
-            defending.hp = defending.def_hp
+            defending.final_health_points = defending_hp
             print(f'{defending.name} победил {attacking.name}')
             persons.append(defending)
+        
 
 if __name__ == '__main__':
     main()
