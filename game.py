@@ -79,14 +79,6 @@ class Warrior(Person):
 
 
 def main():
-    paladins = [Paladin() for _ in range(randint(0, PERSONS_COUNT))]
-    warriors = [Warrior() for _ in range(10 - len(paladins))]
-    persons = paladins + warriors
-    for paladin in paladins:
-        print(paladin)
-    print('--------')
-    for warrior in warriors:
-        print(warrior)
     # Шаг 1. Создаём список вещей
     things = []
     for i in range(10):
@@ -94,7 +86,11 @@ def main():
     things.sort(key=lambda x: x.defence)
     print(things)
 
-    persons = []
+    # Шаг 2.
+    paladins = [Paladin() for _ in range(randint(0, PERSONS_COUNT))]
+    warriors = [Warrior() for _ in range(10 - len(paladins))]
+    persons = paladins + warriors
+
     # Шаг 3. Одеваем персонажей
     for person in persons:
         person.set_things(things)
