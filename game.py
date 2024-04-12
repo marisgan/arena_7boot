@@ -46,11 +46,15 @@ class Person:
     def __str__(self):
         return self.name
 
-    def set_things(self, things):
-        """Одеваем персонажа рандомными вещами"""
+   def set_things(self, things):
+        """Одеваем персонажа рандомными вещами и устанавливаем финальные характеристики"""
         self.persons_things = []
         for _ in range(randint(1, MAX_THINGS_FOR_PERSON)):
             self.persons_things.append(things.pop())
+        for thing in self.persons_things:
+            self.final_health_points = self.base_health_points + thing.hp
+            self.final_attack = self.base_attack + thing.damage
+            self.final_protection = self.base_protection + thing.defence
 
     def attack_damage(self, attacking):
         self.final_health_points = self.final_health_points - attacking.final_attack/self.final_protection
