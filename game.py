@@ -52,16 +52,8 @@ class Person:
         for _ in range(randint(1, MAX_THINGS_FOR_PERSON)):
             self.persons_things.append(things.pop())
 
-    def set_final_attributes(
-            self,
-            things_health_points,
-            things_base_attack,
-            things_base_protection
-    ):
-        self.final_health_points = self.base_health_points + things_health_points
-        self.final_attack = self.base_attack + things_base_attack
-        self.final_protection = self.base_protection + things_base_protection
-
+    def attack_damage(self, attacking):
+        self.final_health_points = self.final_health_points - attacking.final_attack/self.final_protection
 
 class Paladin(Person):
 
