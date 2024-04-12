@@ -23,10 +23,10 @@ def set_name(names):
 
 class Thing(): 
     def __init__(self): 
-        self.name = random.choice(THINGS_NAMES)
-        self.defence = random.randint(0, MAX_DEFENCE) / 100
-        self.damage = random.randint(0, MAX_DAMAGE_HP)
-        self.hp = random.randint(0, MAX_DAMAGE_HP)
+        self.name = choice(THINGS_NAMES)
+        self.defence = randint(0, MAX_DEFENCE) / 100
+        self.damage = randint(0, MAX_DAMAGE_HP)
+        self.hp = randint(0, MAX_DAMAGE_HP)
 
 
 class Person:
@@ -101,9 +101,9 @@ def main():
 
     # Шаг 4. Отправляем персонажей на арену
     while len(persons) > 1
-        attacking = random.choice(persons)
+        attacking = choice(persons)
         persons.pop(attacking)
-        defending = random.choice(persons)
+        defending = choice(persons)
         persons.pop(defending)
         #attacking_hp = attacking.hp
         #defending_hp = defending_hp
