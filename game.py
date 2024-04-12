@@ -32,13 +32,25 @@ def main():
         persons.pop(attacking)
         defending = random.choice(persons)
         persons.pop(defending)
-        
+        #attacking_hp = attacking.hp
+        #defending_hp = defending_hp
         while attacking.hp > 0 or defending.hp > 0:
-            
+            attacking.attac(defending)
             print(f'{attacking.name} наносит удар по {defending.name} на {кол-во урона} урона')
             new_attacing = defending
             defending = attacking
             attacking  = new_attacing
+        if attacking.hp > 0
+            attacking.hp = attacking.def_hp
+            print(f'{attacking.name} победил {defending.name}')
+            persons.append(attacking)
+        else:
+            defending.hp = defending.def_hp
+            print(f'{defending.name} победил {attacking.name}')
+            persons.append(defending)
+        
+        
+
 
 if __name__ == '__main__':
     main()
